@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Gorbon | Full Stack & Web3 Developer</title>
-    <meta name="description" content="Profil Profesional Gorbon. Full Stack Developer, Web3 Expert, dan Smart Contract Deployer.">
+    <meta name="description" content="Profil Profesional Gorbon. Full Stack Developer, Web3 Expert, Smart Contract Architect, and Cyber Security.">
     
     <!-- Google Fonts: Space Grotesk (Tech feel) & Inter (Clean text) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +22,7 @@
             --bg-card-hover: rgba(255, 255, 255, 0.1);
             --primary: #8b5cf6; /* Violet */
             --accent: #10b981;  /* Emerald Green */
+            --security: #ef4444; /* Red for Security Alert/Shield */
             --text-main: #ffffff;
             --text-muted: #a1a1aa;
             --border: rgba(255, 255, 255, 0.1);
@@ -96,6 +97,7 @@
         
         .avatar:hover { transform: scale(1.05) rotate(3deg); }
 
+        /* VERIFIED BADGE ONLY */
         .verified-badge {
             position: absolute;
             bottom: 5px;
@@ -103,13 +105,14 @@
             background: var(--primary);
             color: white;
             border-radius: 50%;
-            width: 28px;
-            height: 28px;
+            width: 30px;
+            height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
             border: 3px solid var(--bg-dark);
-            font-size: 14px;
+            font-size: 16px;
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
         }
 
         .profile-name { font-size: 1.5rem; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.5px; }
@@ -272,6 +275,21 @@
         .contract-copy-hint { font-size: 0.7rem; color: var(--accent); opacity: 0; transition: opacity 0.3s; }
         .contract-card:hover .contract-copy-hint { opacity: 1; }
 
+        /* --- SECURITY CARD STYLE --- */
+        .security-card {
+            background: linear-gradient(145deg, rgba(239, 68, 68, 0.1), rgba(0,0,0,0));
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            cursor: pointer;
+        }
+
+        .security-card:hover {
+            border-color: var(--security);
+            background: linear-gradient(145deg, rgba(239, 68, 68, 0.2), rgba(0,0,0,0));
+        }
+
+        .security-card .link-icon { color: var(--security); }
+        .security-card .link-arrow { color: var(--security); }
+
         /* --- FOOTER --- */
         .footer {
             margin-top: 40px;
@@ -330,10 +348,14 @@
             <div class="avatar-wrapper">
                 <!-- FOTO PROFIL DIUPDATE MENGGUNAKAN LINK SUPABASE -->
                 <img src="https://dikapquhusbwjccbqcsb.supabase.co/storage/v1/object/public/images/zer-2.webp" alt="Gorbon Avatar" class="avatar">
-                <div class="verified-badge"><i class="ph ph-check"></i></div>
+                
+                <!-- VERIFIED BADGE (HANYA INI) -->
+                <div class="verified-badge">
+                    <i class="ph ph-seal-check"></i>
+                </div>
             </div>
             <h1 class="profile-name">Gorbon</h1>
-            <p class="profile-bio">Full Stack Dev • Web3 Enthusiast • Smart Contract Architect</p>
+            <p class="profile-bio">Full Stack Dev • Web3 Enthusiast • Security Researcher</p>
         </header>
 
         <!-- SOCIAL ICONS -->
@@ -361,7 +383,7 @@
             </a>
 
             <!-- PROJECT 2: Aurora (Web3) -->
-            <a href="https://aurora-xi-ten.vercel.app" target="_blank" class="link-card">
+            <a href="https://aurora.vercel.app" target="_blank" class="link-card">
                 <div class="link-left">
                     <i class="ph ph-cube-transparent link-icon" style="color: #22d3ee;"></i>
                     <div class="link-info">
@@ -405,12 +427,42 @@
             </div>
         </div>
 
-        <!-- SECTION 3: RESOURCES & TUTORIALS -->
+        <!-- SECTION 3: SECURITY (CYBER SECURITY) -->
+        <div class="section-header">
+            <i class="ph ph-shield-warning" style="color: var(--security);"></i> Cyber Security
+        </div>
+        <div class="links-container">
+            <!-- SECURITY AUDIT SERVICE -->
+            <a href="mailto:gorbondev@gmail.com?subject=Request%20Security%20Audit" class="link-card security-card">
+                <div class="link-left">
+                    <i class="ph ph-bug-beetle link-icon"></i>
+                    <div class="link-info">
+                        <h4>Smart Contract Audit</h4>
+                        <p>Professional Vulnerability Assessment</p>
+                    </div>
+                </div>
+                <i class="ph ph-envelope-simple link-arrow"></i>
+            </a>
+
+            <!-- DUMMY: OFFENSIVE SECURITY (CTF) -->
+            <div class="link-card blur-card">
+                <div class="badge-lock" style="border-color: var(--security); color: var(--security);"><i class="ph ph-skull"></i> Restricted</div>
+                <div class="link-left">
+                    <i class="ph ph-terminal-window link-icon" style="color: var(--security);"></i>
+                    <div class="link-info">
+                        <h4>Red Teaming Operations</h4>
+                        <p>Penetration Testing & CTF Writeups</p>
+                    </div>
+                </div>
+                <i class="ph ph-lock link-arrow" style="opacity: 0.5; color: var(--security);"></i>
+            </div>
+        </div>
+
+        <!-- SECTION 4: RESOURCES & TUTORIALS -->
         <div class="section-header">
             <i class="ph ph-article"></i> Resources 
         </div>
         <div class="links-container">
-            <!-- PROJECT 3: Kopinya Tutorial -->
             <a href="https://otwtajir.my.id" target="_blank" class="link-card">
                 <div class="link-left">
                     <i class="ph ph-coffee link-icon" style="color: #f59e0b;"></i>
@@ -423,7 +475,7 @@
             </a>
         </div>
 
-        <!-- SECTION 4: ROADMAP -->
+        <!-- SECTION 5: ROADMAP -->
         <div class="section-header">
             <i class="ph ph-clock-countdown"></i> Roadmap
         </div>
@@ -455,12 +507,11 @@
             </div>
         </div>
 
-        <!-- SECTION 5: SMART CONTRACT (PENTING BAGI WEB3 DEV) -->
+        <!-- SECTION 6: SMART CONTRACTS -->
         <div class="section-header">
             <i class="ph ph-file-code"></i> Smart Contracts
         </div>
         <div class="links-container">
-            <!-- SPECIAL: SMART CONTRACT ADDRESS (Click to Copy) -->
             <div class="link-card contract-card" onclick="copyContract('0x1234567890abcdef1234567890abcdef12345678')">
                 <div class="link-left">
                     <i class="ph ph-currency-eth link-icon"></i>
@@ -476,7 +527,7 @@
             </div>
         </div>
 
-        <!-- FOOTER CTA (EMAIL DIUBAH KE GMAIL) -->
+        <!-- FOOTER CTA -->
         <div class="links-container" style="margin-top: 10px;">
             <a href="mailto:gorbondev@gmail.com" class="link-card" style="background: rgba(139, 92, 246, 0.15); border-color: var(--primary);">
                 <div class="link-left">
@@ -492,8 +543,8 @@
 
         <!-- FOOTER -->
         <footer class="footer">
-            <div class="footer-logo">Gorbon</div>
-            <p>© 2026 All Rights Reserved.</p>
+            <div class="footer-logo">Rantai Usang</div>
+            <p>© 2026  Gorbon Rantai Usang. All Rights Reserved.</p>
         </footer>
     </div>
 
