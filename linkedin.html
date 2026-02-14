@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Profil Andang Yulianto | LinkedIn Style</title>
+    <meta name="description" content="Profil Profesional Andang Yulianto - Lead Architect SatuCore.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        :root {
+            --bg-body: #f3f2ef;
+            --bg-card: #ffffff;
+            --primary: #0a66c2; /* LinkedIn Blue */
+            --primary-dark: #004182;
+            --text-main: #191919;
+            --text-sub: #666666;
+            --border: #e0e0e0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding-bottom: 40px;
+        }
+
+        /* HEADER */
+        header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0 20px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-back {
+            position: absolute;
+            left: 20px;
+            text-decoration: none;
+            color: var(--text-sub);
+            font-size: 1.2rem;
+        }
+
+        .nav-title {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* COVER PHOTO */
+        .cover-photo {
+            height: 150px;
+            background: linear-gradient(135deg, #0f172a 0%, #0ea5e9 100%);
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            margin-bottom: -60px; /* Pull up profile pic */
+            position: relative;
+        }
+
+        /* PROFILE CARD */
+        .profile-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            box-shadow: 0 0 0 1px var(--border);
+            padding: 0;
+            margin-bottom: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-header-int {
+            padding: 70px 24px 24px 24px;
+            text-align: center;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--bg-card);
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            object-fit: cover;
+            background: #ddd;
+        }
+
+        .profile-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 50px; /* Space for pic */
+            margin-bottom: 4px;
+        }
+
+        .profile-headline {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+        }
+
+        .profile-location {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .btn-connect {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 6px 24px;
+            border-radius: 24px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+            max-width: 250px;
+        }
+        
+        .btn-connect:hover { background-color: var(--primary-dark); }
+
+        .btn-more {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 6px 24px;
+            border-radius: 24px;
+            font-weight: 600;
+            margin-top: 8px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 250px;
+        }
+
+        /* SECTIONS */
+        .section {
+            background: var(--bg-card);
+            border-radius: 8px;
+            box-shadow: 0 0 0 1px var(--border);
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title i { color: var(--text-sub); font-size: 1.2rem; }
+
+        .experience-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 16px;
+        }
+        .experience-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+        .exp-role { font-weight: 600; font-size: 1rem; }
+        .exp-company { color: var(--text-sub); font-size: 0.9rem; margin-bottom: 4px; }
+        .exp-date { font-size: 0.8rem; color: var(--text-sub); margin-bottom: 8px; }
+        .exp-desc { font-size: 0.9rem; color: var(--text-main); line-height: 1.4; }
+
+        .skill-tag {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="nav-back"><i class="ph ph-arrow-left"></i></a>
+        <div class="nav-title">Profil</div>
+    </header>
+
+    <div class="container">
+        <div class="cover-photo"></div>
+
+        <!-- PROFILE CARD -->
+        <div class="profile-card">
+            <img src="https://dikapquhusbwjccbqcsb.supabase.co/storage/v1/object/public/images/zer-2.webp" alt="Andang Yulianto" class="profile-pic">
+            
+            <div class="profile-header-int">
+                <h1 class="profile-name">Andang Yulianto</h1>
+                <p class="profile-headline">Lead Architect & Founder di SatuCore Continuum</p>
+                <div class="profile-location">
+                    <i class="ph ph-map-pin"></i> Indonesia
+                </div>
+                <button class="btn-connect" onclick="alert('Permintaan koneksi terkirim!')">Terhubung</button>
+                <button class="btn-more">Lihat Profil Lengkap</button>
+            </div>
+        </div>
+
+        <!-- ABOUT SECTION -->
+        <div class="section">
+            <div class="section-title">
+                Tentang
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-main); line-height: 1.6;">
+                Saya adalah seorang arsitek sistem yang berfokus pada pembangunan infrastruktur teknologi jangka panjang. 
+                Sebagai founder SatuCore, saya mendedikasikan pekerjaan saya untuk menciptakan sistem IoT yang otonom, 
+                berkelanjutan, dan mampu berkembang (evolvable) untuk mendukung pertanian cerdas dan desa masa depan.
+            </p>
+        </div>
+
+        <!-- EXPERIENCE SECTION -->
+        <div class="section">
+            <div class="section-title">
+                Pengalaman
+                <i class="ph ph-pencil-simple"></i>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-role">Lead Architect & Founder</div>
+                <div class="exp-company">SatuCore Continuum</div>
+                <div class="exp-date">2024 - Sekarang · 2 thn</div>
+                <p class="exp-desc">
+                    Merancang arsitektur sistem berbasis Edge-First, mengembangkan AI Layer untuk pertanian, 
+                    dan memimpin eksekusi Roadmap 50 tahun menuju sistem Post-Sovereign.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-role">Full Stack Developer</div>
+                <div class="exp-company">Gorbon / Rantai Usang</div>
+                <div class="exp-date">2020 - 2024 · 4 thn</div>
+                <p class="exp-desc">
+                    Pengembangan aplikasi Web3, Smart Contracts, dan solusi keamanan siber untuk klien enterprise.
+                </p>
+            </div>
+        </div>
+
+        <!-- SKILLS SECTION -->
+        <div class="section">
+            <div class="section-title">
+                Keahlian
+            </div>
+            <div>
+                <span class="skill-tag">IoT Architecture</span>
+                <span class="skill-tag">Artificial Intelligence</span>
+                <span class="skill-tag">Smart Contracts</span>
+                <span class="skill-tag">Full Stack Development</span>
+                <span class="skill-tag">System Design</span>
+                <span class="skill-tag">Edge Computing</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
